@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Odoo App-Ausblender",
+  "version": "1.0.0",
+  "description": "Blendet ausgewählte Apps auf der Odoo-Startseite aus.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Odoo-Apps ein-/ausblenden",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://datadiorama.digisoolut.co/*",
+        "https://servicedesk.datadiorama.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
